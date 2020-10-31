@@ -119,8 +119,6 @@ MIT Licensed
 ## Author:
 Sujit Mandal
 
-Tejeshwar Pradhan [ Front End Team ]
-
 [GitHub](https://github.com/sujitmandal)
 
 [PyPi](https://pypi.org/user/sujitmandal/)
