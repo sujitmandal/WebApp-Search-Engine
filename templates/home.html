@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/css.css') }}">
+	<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+<body>
+	<center>
+
+	<h1>Search</h1>
+
+	<form action="result" onclick="showhide()" method="post">
+		<input type="text" name="txt_search" id="txt_search">
+		<input type="submit" name="btn_search" id="btn_search" value="search">	
+	</form>
+	
+
+	</center>
+</body>
+</html>

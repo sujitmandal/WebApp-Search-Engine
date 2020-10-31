@@ -1,0 +1,102 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Scrape Search Engine</title> 
+<link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet"> 
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">     
+
+
+<table class="centered thick-border">
+	<h4 class="panel panel-blue text-center">Google</h4>
+
+		{% for key, value in googleSearch %}
+		<a href="{{ key }}" >{{ value }}</a><br>
+		{% endfor %}
+</table>
+
+<table>
+	<p><p><br></p></p>
+</table>
+
+<table class="centered thick-border">
+	<h4 class="panel panel-blue text-center">Givewater</h4>
+
+		{% for key, value in givewaterSearch %}
+		<a href="{{ key }}" >{{ value }}</a><br>
+		{% endfor %}
+</table>
+
+<table>
+	<p><p><br></p></p>
+</table>
+
+<table class="centered thick-border">
+	<h4 class="panel panel-blue text-center">Yahoo</h4>
+
+		{% for key, value in yahooSearch %}
+		<a href="{{ key }}" >{{ value }}</a><br>
+		{% endfor %}
+</table>
+
+<table>
+	<p><p><br></p></p>
+</table>
+
+<table class="centered thick-border">
+	<h4 class="panel panel-blue text-center">Duckduckgo</h4>
+
+		{% for key, value in duckduckgoSearch %}
+		<a href="{{ key }}" >{{ value }}</a><br>
+		{% endfor %}
+</table>
+
+<table>
+	<p><p><br></p></p>
+</table>
+
+<table class="centered thick-border">
+	<h4 class="panel panel-blue text-center">Ecosia</h4>
+
+		{% for key, value in ecosiaSearch %}
+		<a href="{{ key }}" >{{ value }}</a><br>
+		{% endfor %}
+</table>
+
+<table>
+	<p><p><br></p></p>
+</table>
+
+<table class="centered thick-border">
+	<h4 class="panel panel-blue text-center">Bing</h4>
+
+		{% for key, value in bingSearch %}
+		<a href="{{ key }}" >{{ value }}</a><br>
+		{% endfor %}
+</table>
+
+<table>
+	<p><p><br></p></p>
+</table>
+
+<table class="centered thick-border">
+	<h4 class="panel panel-blue text-center">CommonLink</h4>
+
+		{% for key, value in commonLink %}
+		<a href="{{ key }}" >{{ value }}</a><br>
+		{% endfor %}
+</table>
+
+<table>
+	<p><p><br></p></p>
+</table>
+
+</head>
+</html>
