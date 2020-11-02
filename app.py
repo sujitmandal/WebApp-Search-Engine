@@ -83,8 +83,7 @@ def result():
 				if j == value:
 					finalKey.append(key)
 
-		commonLink = zip(finalKey, finalLink)
-		print(finalLink)
+		commonLink = zip(finalLink, finalKey)
 		return(render_template('result.html', googleSearch=googleSearch, givewaterSearch=givewaterSearch, yahooSearch=yahooSearch, duckduckgoSearch=duckduckgoSearch, ecosiaSearch=ecosiaSearch, bingSearch=bingSearch, commonLink=commonLink))
 	return(None)
 
