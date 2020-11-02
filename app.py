@@ -2,6 +2,7 @@ from flask import Flask
 from flask import url_for
 from flask import request
 from flask import redirect
+from collections import Counter
 from flask import render_template
 from ScrapeSearchEngine.SearchEngine import Google
 from ScrapeSearchEngine.SearchEngine import Givewater
@@ -26,18 +27,6 @@ app = Flask(__name__)
 def home():
 	return(render_template('home.html'))
 
-def Dictionary(keys, values):
-    key = []
-    value = []
-
-    for i in keys:
-        key.append(i)
-
-    for j in values:
-        value.append(j)
-
-    commonDictionary = dict(zip(key, value))
-    return(commonDictionary)
 
 @app.route('/result', methods=['POST', 'GET'])
 def result():
@@ -56,35 +45,44 @@ def result():
 		bing_text, bing_link = Bing(search, userAgent)
 		bingSearch = zip(bing_link, bing_text)
 
-		googleSet = set(google_link)
-		givewaterSet = set(givewater_link)
-		duckduckgoSet = set(duckduckgo_link)
-		ecosiaSet = set(ecosia_link)
-		bingSet = set(bing_link)
-		yahooSet = set(yahoo_link)
+		link = []
+		for i in google_link:
+			link.append(i)
+		for j in givewater_link:
+			link.append(j)
+		for k in duckduckgo_link:
+			link.append(k)
+		for l in yahoo_link:
+			link.append(l)
+		for m in ecosia_link:
+			link.append(m)
+		for n in bing_link:
+			link.append(n)
 
-		intersection1 = googleSet.intersection(givewaterSet)
-		intersection2 = intersection1.intersection(ecosiaSet)
-		intersection3 = intersection2.intersection(bingSet)
-		intersection4 = intersection3.intersection(duckduckgoSet)
-		intersection5 = intersection4.intersection(yahooSet)
+		text = []
+		for i in google_text:
+			text.append(i)
+		for j in givewater_text:
+			text.append(j)
+		for k in duckduckgo_text:
+			text.append(k)
+		for l in yahoo_text:
+			text.append(l)
+		for m in ecosia_text:
+			text.append(m)
+		for n in bing_text:
+			text.append(n)
+
+		commonLink = Counter(link)
+		commonLinks = dict(commonLink)
+
+		commonText = Counter(text)
+		commonTexts = dict(commonText)
+		print(commonLinks)
+		print('\n')
+		print(commonTexts)
 		
-		intersectionList = list(intersection5)
-		
-		finalLink = []
-		for i in intersectionList:
-			finalLink.append(i)
-
-		dictionary = Dictionary(google_text, google_link)
-		finalKey = []
-
-		for j in finalLink:
-			for key , value in dictionary.items():
-				if j == value:
-					finalKey.append(key)
-
-		commonLink = zip(finalLink, finalKey)
-		return(render_template('result.html', googleSearch=googleSearch, givewaterSearch=givewaterSearch, yahooSearch=yahooSearch, duckduckgoSearch=duckduckgoSearch, ecosiaSearch=ecosiaSearch, bingSearch=bingSearch, commonLink=commonLink))
+		return(render_template('result.html', googleSearch=googleSearch, givewaterSearch=givewaterSearch, yahooSearch=yahooSearch, duckduckgoSearch=duckduckgoSearch, ecosiaSearch=ecosiaSearch, bingSearch=bingSearch))
 	return(None)
 
 if __name__ == "__main__":

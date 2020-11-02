@@ -1,4 +1,4 @@
-scrape-search-engine>=0.1.7
+scrape-search-engine>=0.1.8
 requests
 Flask
 bs4
