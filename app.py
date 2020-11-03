@@ -19,8 +19,7 @@ Pypi : https://pypi.org/user/sujitmandal/
 LinkedIn : https://www.linkedin.com/in/sujit-mandal-91215013a/
 """
 
-userAgent = (
-    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36')
+userAgent = ('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36')
 
 app = Flask(__name__)
 
@@ -41,8 +40,8 @@ def result():
         yahoo_text, yahoo_link = Yahoo(search, userAgent)
         yahooSearch = zip(yahoo_link, yahoo_text)
         duckduckgo_text, duckduckgo_link = Duckduckgo(search, userAgent)
-        duckduckgo_text = duckduckgo_text[1:11]
-        duckduckgo_link = duckduckgo_link[1:11]
+        duckduckgo_text = duckduckgo_text[:10]
+        duckduckgo_link = duckduckgo_link[:10]
         duckduckgoSearch = zip(duckduckgo_link, duckduckgo_text)
         ecosia_text, ecosia_link = Ecosia(search, userAgent)
         ecosiaSearch = zip(ecosia_link, ecosia_text)
@@ -77,26 +76,38 @@ def result():
         for n in bing_text:
             text.append(n)
 
-        commonLink = Counter(link)
-        commonLinks = dict(commonLink)
-
         commonText = Counter(text)
         commonTexts = dict(commonText)
+
+        commonLink = Counter(link)
+        commonLinks = dict(commonLink)
 
         finalText = []
         finalLink = []
 
-        for text in commonTexts.items():
-            finalText.append(text)
+        text = []
+        value = []
+
+        for keys, values in commonTexts.items():
+            text.append(keys)
+            value.append(values)
+            
+        for s in range(len(text)):
+            texts = text[s] + '    ' + str(value[s])
+            finalText.append(texts)
 
         for link in commonLinks.keys():
             finalLink.append(link)
 
         finalResults = zip(finalLink, finalText)
 
-        return (render_template('result.html', googleSearch=googleSearch, givewaterSearch=givewaterSearch,
-                                yahooSearch=yahooSearch, duckduckgoSearch=duckduckgoSearch, ecosiaSearch=ecosiaSearch,
-                                bingSearch=bingSearch, finalResults=finalResults))
+        return (render_template('result.html',  googleSearch=googleSearch, 
+                                                givewaterSearch=givewaterSearch,
+                                                yahooSearch=yahooSearch, 
+                                                duckduckgoSearch=duckduckgoSearch, 
+                                                ecosiaSearch=ecosiaSearch,
+                                                bingSearch=bingSearch, 
+                                                finalResults=finalResults))
     return None
 
 
