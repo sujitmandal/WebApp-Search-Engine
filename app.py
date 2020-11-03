@@ -88,9 +88,9 @@ def result():
 		for link in commonLinks.keys():
 			finalLink.append(link)
 
-		filnalResults = zip(finalLink, finalText)
+		finalResults = zip(finalLink, finalText)
 
-		return(render_template('result.html', googleSearch=googleSearch, givewaterSearch=givewaterSearch, yahooSearch=yahooSearch, duckduckgoSearch=duckduckgoSearch, ecosiaSearch=ecosiaSearch, bingSearch=bingSearch, filnalResults=filnalResults))
+		return(render_template('result.html', googleSearch=googleSearch, givewaterSearch=givewaterSearch, yahooSearch=yahooSearch, duckduckgoSearch=duckduckgoSearch, ecosiaSearch=ecosiaSearch, bingSearch=bingSearch, finalResults=finalResults))
 	return(None)
 
 if __name__ == "__main__":
