@@ -2,8 +2,12 @@ input[type="text"] {
 	height: 50px;
 	width: 700px;
 }
+input[type="text"]:hover {
+	color: #000000de;
+	border-color: #129d06;
+}
 
-input[type="submit"] {
+.bt1 {
 	padding-bottom: 5px;
 	height: 55px;
 	width: 100px;
@@ -11,7 +15,7 @@ input[type="submit"] {
 }
 
 h1 {
-	color: #042d63; 
+	color: #000000de; 
 	font-weight: bolder;
 }
 
@@ -36,7 +40,7 @@ body {font-family: Arial;}
 }
 
 .tab button:hover {
-	background-color: #00005F;
+	background-color: #129d06;
 	color: #FFFFFF;
 }
 
