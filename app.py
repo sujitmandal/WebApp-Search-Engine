@@ -86,7 +86,7 @@ def result():
 			finalText.append(text)
 
 		for link in commonLinks.keys():
-			filnaLink.append(link)
+			finalLink.append(link)
 
 		filnalResults = zip(finalLink, finalText)
 
