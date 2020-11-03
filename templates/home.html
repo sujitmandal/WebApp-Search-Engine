@@ -2,17 +2,22 @@
 <html>
 <head>
 	<title>Search</title>
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/css.css') }}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../static/css/css.css">
 	<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
 </head>
 <body>
 	<center>
-
+		<br>
+		<br>
 	<h1>Search</h1>
+	<br>
+	<br>
+	<br>
 
 	<form action="result" onclick="showhide()" method="post">
 		<input type="text" name="txt_search" id="txt_search">
-		<input type="submit" name="btn_search" id="btn_search" value="search">	
+		<button type="button" class="btn btn-outline-success bt1 pb-2" style="height: 52px;">Search</button>	
 	</form>
 	
 
