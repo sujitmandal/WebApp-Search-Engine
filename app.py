@@ -80,15 +80,15 @@ def result():
 		commonTexts = dict(commonText)
 
 		finalText = []
-		filnalLink = []
+		finalLink = []
 
 		for text in commonTexts.items():
 			finalText.append(text)
 
 		for link in commonLinks.keys():
-			filnalLink.append(link)
+			filnaLink.append(link)
 
-		filnalResults = zip(filnalLink, finalText)
+		filnalResults = zip(finalLink, finalText)
 
 		return(render_template('result.html', googleSearch=googleSearch, givewaterSearch=givewaterSearch, yahooSearch=yahooSearch, duckduckgoSearch=duckduckgoSearch, ecosiaSearch=ecosiaSearch, bingSearch=bingSearch, filnalResults=filnalResults))
 	return(None)
