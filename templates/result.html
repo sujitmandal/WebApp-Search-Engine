@@ -1,87 +1,91 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Scrape Search Engine</title> 
-<link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet"> 
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">     
-
-<table class="centered thick-border">
-	<h4 class="panel panel-blue text-center">Google</h4>
-
-		{% for key, value in googleSearch %}
-		<a href="{{ key }}" >{{ value }}</a><br>
-		{% endfor %}
-</table>
-<table>
-	<p><p><br></p></p>
-</table>
-<table class="centered thick-border">
-	<h4 class="panel panel-blue text-center">Givewater</h4>
-
-		{% for key, value in givewaterSearch %}
-		<a href="{{ key }}" >{{ value }}</a><br>
-		{% endfor %}
-</table>
-<table>
-	<p><p><br></p></p>
-</table>
-<table class="centered thick-border">
-	<h4 class="panel panel-blue text-center">Yahoo</h4>
-
-		{% for key, value in yahooSearch %}
-		<a href="{{ key }}" >{{ value }}</a><br>
-		{% endfor %}
-</table>
-<table>
-	<p><p><br></p></p>
-</table>
-<table class="centered thick-border">
-	<h4 class="panel panel-blue text-center">Duckduckgo</h4>
-
-		{% for key, value in duckduckgoSearch %}
-		<a href="{{ key }}" >{{ value }}</a><br>
-		{% endfor %}
-</table>
-<table>
-	<p><p><br></p></p>
-</table>
-<table class="centered thick-border">
-	<h4 class="panel panel-blue text-center">Ecosia</h4>
-
-		{% for key, value in ecosiaSearch %}
-		<a href="{{ key }}" >{{ value }}</a><br>
-		{% endfor %}
-</table>
-<table>
-	<p><p><br></p></p>
-</table>
-<table class="centered thick-border">
-	<h4 class="panel panel-blue text-center">Bing</h4>
-
-		{% for key, value in bingSearch %}
-		<a href="{{ key }}" >{{ value }}</a><br>
-		{% endfor %}
-</table>
-<table>
-	<p><p><br></p></p>
-</table>
-<table class="centered thick-border">
-	<h4 class="panel panel-blue text-center">Final Results</h4>
-
-		{% for key, value in finalResults %}
-		<a href="{{ key }}" >{{ value }}</a><br>
-		{% endfor %}
-</table>
-<table>
-	<p><p><br></p></p>
-</table>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scrape Search Engine</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fontawesome.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark shadow-lg p-3 mb-5" style="background-color:#032d3b;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container d-flex justify-content-center">
+        <h2 class="navbar-text text-white">
+            Search Engine
+        </h2>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <h4 class="panel panel-blue text-center">Google</h4>
+
+            {% for key, value in googleSearch %}
+            <a href="{{ key }}" class="btn btn-success mt-3 w-100">{{ value }}</a><br>
+            {% endfor %}
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <h4 class="panel panel-blue text-center">Givewater</h4>
+
+            {% for key, value in givewaterSearch %}
+            <a href="{{ key }}" class="btn btn-success mt-3 w-100">{{ value }}</a><br>
+            {% endfor %}
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <h4 class="panel panel-blue text-center">Yahoo</h4>
+
+            {% for key, value in yahooSearch %}
+            <a href="{{ key }}" class="btn btn-success mt-3 w-100">{{ value }}</a><br>
+            {% endfor %}
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <h4 class="panel panel-blue text-center">Duckduckgo</h4>
+
+            {% for key, value in duckduckgoSearch %}
+            <a href="{{ key }}" class="btn btn-success mt-3 w-100">{{ value }}</a><br>
+            {% endfor %}
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <h4 class="panel panel-blue text-center">Ecosia</h4>
+
+            {% for key, value in ecosiaSearch %}
+            <a href="{{ key }}" class="btn btn-success mt-3 w-100">{{ value }}</a><br>
+            {% endfor %}
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <h4 class="panel panel-blue text-center">Bing</h4>
+
+            {% for key, value in bingSearch %}
+            <a href="{{ key }}" class="btn btn-success mt-3 w-100">{{ value }}</a><br>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<hr class="w-75 pt-2">
+<div class="container pt-3 pb-5">
+    <div class="justify-content-center">
+        <h4 class="panel panel-blue text-center">Common Results</h4>
+
+        {% for key, value in finalResults %}
+        <a href="{{ key }}" class="btn btn-success mt-3 w-50">{{ value }}</a><br>
+        {% endfor %}
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+<script src="{{ url_for('static', filename='js/popper.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+<script src="{{ url_for('static', filename='js/fontawesome.js') }}"></script>
+
+</body>
 </html>
