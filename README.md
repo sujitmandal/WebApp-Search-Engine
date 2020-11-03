@@ -37,7 +37,8 @@ Create a pull request from Github
 [Package Link](https://pypi.org/project/scrape-search-engine/)
 
 
-## Installing the required package’s:
+
+## Required package’s:
 ```
 • pip install scrape-search-engine
 
