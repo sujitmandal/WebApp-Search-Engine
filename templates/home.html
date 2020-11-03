@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fontawesome.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark shadow-lg p-3 mb-5" style="background-color:#032d3b;">
@@ -15,14 +16,14 @@
 
     <div class="container d-flex justify-content-center">
         <h2 class="navbar-text text-white">
-            Search Engine
+            Scrape Search Engine
         </h2>
     </div>
 </nav>
 <div class="d-flex justify-content-center">
     <form action="result" method="post">
         <input type="text" placeholder="Search here..." id="txt_search" name="txt_search">
-        <button type="submit" class="btn btn-outline-success">Search</button>
+        <button type="submit" class="btn btn-outline-success bt1 pb-2" style="height: 52px;">Search</button>
     </form>
 </div>
 

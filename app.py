@@ -41,6 +41,8 @@ def result():
         yahoo_text, yahoo_link = Yahoo(search, userAgent)
         yahooSearch = zip(yahoo_link, yahoo_text)
         duckduckgo_text, duckduckgo_link = Duckduckgo(search, userAgent)
+        duckduckgo_text = duckduckgo_text[1:11]
+        duckduckgo_link = duckduckgo_link[1:11]
         duckduckgoSearch = zip(duckduckgo_link, duckduckgo_text)
         ecosia_text, ecosia_link = Ecosia(search, userAgent)
         ecosiaSearch = zip(ecosia_link, ecosia_text)
@@ -100,5 +102,5 @@ def result():
 
 if __name__ == "__main__":
     app.run(
-        port=10000
+        port=5000
     )
